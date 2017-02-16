@@ -20,28 +20,28 @@ import java.io.File;
 import java.util.List;
 
 public class VersionIteratorGit extends VersionIterator {
-	
+
 	private final List<GitCommit> entries;
-	
+
 	public VersionIteratorGit(final List<GitCommit> entries, final File projectFolder) {
 		super(projectFolder);
 		this.entries = entries;
 	}
-	
+
 	@Override
-	public void goToFirstCommit(){
+	public void goToFirstCommit() {
 		GitUtils.goToTag(entries.get(0).getTag(), projectFolder);
 	}
-	
+
 	@Override
-	public void goToNextCommit(){
+	public void goToNextCommit() {
 		tagid++;
 		GitUtils.goToTag(entries.get(tagid).getTag(), projectFolder);
 	}
-	
+
 	@Override
-	public boolean hasNextCommit(){
-		return tagid < entries.size();
+	public boolean hasNextCommit() {
+		return tagid + 1 < entries.size();
 	}
 
 	@Override
@@ -53,6 +53,5 @@ public class VersionIteratorGit extends VersionIterator {
 	public int getSize() {
 		return entries.size();
 	}
-	
-	
+
 }

@@ -142,8 +142,7 @@ public class GitUtils {
 	 */
 	public static void goToTag(final String tag, final File projectFolder) {
 		try {
-			LOG.info("Gehe zu Tag: " + tag + " Ordner: "
-					+ projectFolder.getAbsolutePath());
+			LOG.info("Gehe zu Tag: " + tag + " Ordner: " + projectFolder.getAbsolutePath());
 			Process p = Runtime.getRuntime().exec("git reset --hard", new String[0], projectFolder);
 			StreamGobbler.showFullProcess(p);
 			p.waitFor();
