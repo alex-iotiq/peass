@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.peran</groupId>
-    <artifactId>peran-parent</artifactId>
+    <groupId>de.peass</groupId>
+    <artifactId>peass-parent</artifactId>
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
-    <name>PerAn - Parent</name>
-    <description>Analyseframework für Softwareperformanz</description>
+    <name>PeASS - Parent</name>
+    <description>Tool for Analysing the Performance Changes in a Project</description>
 
     <modules>
 	<module>dependency</module>
@@ -22,4 +22,18 @@
 	</developer>
     </developers>
 
+	<licenses>
+		<license>
+			<name>GNU Affero General Public License</name>
+			<url>https://www.gnu.org/licenses/agpl.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	
+	<inceptionYear>2015</inceptionYear>
+	<properties>
+		<project.organization.name>DaGeRe</project.organization.name>
+		<license.licenseName>agpl_v3</license.licenseName>
+	</properties>
 </project>
