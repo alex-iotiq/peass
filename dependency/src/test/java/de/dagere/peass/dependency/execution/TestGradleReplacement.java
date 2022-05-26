@@ -76,12 +76,13 @@ public class TestGradleReplacement {
 
    @Test
    public void testReplacement() throws IOException, XmlPullParserException, InterruptedException {
-      System.out.println("Real test start");
+      System.out.println("Real test start: " + System.currentTimeMillis());
       try {
-         Thread.sleep(5000);
+         Thread.sleep(10000);
       } catch (InterruptedException e) {
          e.printStackTrace();
       }
+      System.out.println("After sleep: " + System.currentTimeMillis());
       
       prepareBuildfiles(true);
 
