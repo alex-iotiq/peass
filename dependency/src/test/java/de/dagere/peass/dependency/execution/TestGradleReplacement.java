@@ -66,9 +66,11 @@ public class TestGradleReplacement {
             writer.write(ALTERNATIVE_FILE_CONTENT);
          }
          LOG.debug("Creation success: " + alternativeGradle.exists() + " parent: " + module.exists());
+         File file = new File(module, "build.gradle");
+         LOG.debug("Original: " + file + " exists: " + file.exists());
       }
       try {
-         Thread.sleep(5000);
+         Thread.sleep(500);
       } catch (InterruptedException e) {
          e.printStackTrace();
       }
@@ -78,7 +80,7 @@ public class TestGradleReplacement {
    public void testReplacement() throws IOException, XmlPullParserException, InterruptedException {
       System.out.println("Real test start: " + System.currentTimeMillis());
       try {
-         Thread.sleep(10000);
+         Thread.sleep(1000);
       } catch (InterruptedException e) {
          e.printStackTrace();
       }
