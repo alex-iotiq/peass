@@ -67,6 +67,11 @@ public class TestGradleReplacement {
          }
          LOG.debug("Creation success: " + alternativeGradle.exists() + " parent: " + module.exists());
       }
+      try {
+         Thread.sleep(1000);
+      } catch (InterruptedException e) {
+         e.printStackTrace();
+      }
    }
 
    @Test
