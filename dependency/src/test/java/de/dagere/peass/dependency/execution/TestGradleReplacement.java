@@ -86,6 +86,7 @@ public class TestGradleReplacement {
       List<File> modules = SettingsFileParser.getModules(projectDir).getModules();
       for (File module : modules) {
          File alternativeGradle = new File(module, GradleParseHelper.ALTERNATIVE_NAME);
+         LOG.debug("Alternative buildfile: {}", alternativeGradle);
          LOG.debug("Alternative file exists: " + alternativeGradle.exists() + " parent: " + module.exists());
       }
       
