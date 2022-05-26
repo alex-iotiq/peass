@@ -74,6 +74,8 @@ public class GradleTestExecutor extends KoPeMeExecutor {
       File potentialAlternativeFile = new File(gradleFile.getParentFile(), GradleParseHelper.ALTERNATIVE_NAME);
       if (potentialAlternativeFile.exists()) {
          LOG.debug("Replacing {} by {}", gradleFile, potentialAlternativeFile);
+         LOG.debug("Old exists {}", gradleFile.exists());
+         LOG.debug("Alternative exists {}", potentialAlternativeFile.exists());
          gradleFile.delete();
          FileUtils.moveFile(potentialAlternativeFile, gradleFile);
       }
