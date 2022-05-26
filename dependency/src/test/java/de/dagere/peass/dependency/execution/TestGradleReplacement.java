@@ -41,6 +41,15 @@ public class TestGradleReplacement {
    
    @BeforeEach
    public void prepareFolder() throws IOException {
+      
+      for (int i = 0; i < 10; i++) {
+         System.out.println();
+      }
+      System.out.println("Starting Test");
+      for (int i = 0; i < 10; i++) {
+         System.out.println();
+      }
+      
       FileUtils.deleteDirectory(tempDir);
       
       projectDir = new File(tempDir, "project");
