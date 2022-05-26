@@ -65,6 +65,7 @@ public class TestGradleReplacement {
          try (BufferedWriter writer = new BufferedWriter(new FileWriter(alternativeGradle))) {
             writer.write(ALTERNATIVE_FILE_CONTENT);
          }
+         LOG.debug("Creation success: " + alternativeGradle.exists() + " parent: " + module.exists());
       }
    }
 
