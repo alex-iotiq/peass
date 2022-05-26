@@ -83,10 +83,14 @@ public class TestGradleReplacement {
          e.printStackTrace();
       }
       System.out.println("After sleep: " + System.currentTimeMillis());
+      List<File> modules = SettingsFileParser.getModules(projectDir).getModules();
+      for (File module : modules) {
+         File alternativeGradle = new File(module, GradleParseHelper.ALTERNATIVE_NAME);
+         LOG.debug("Alternative file exists: " + alternativeGradle.exists() + " parent: " + module.exists());
+      }
       
       prepareBuildfiles(true);
 
-      List<File> modules = SettingsFileParser.getModules(projectDir).getModules();
       for (File module : modules) {
          final File gradleFile = GradleParseHelper.findGradleFile(module);
          String fileContent = FileUtils.readFileToString(gradleFile, StandardCharsets.UTF_8);
