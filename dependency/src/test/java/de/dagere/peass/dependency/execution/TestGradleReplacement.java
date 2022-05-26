@@ -68,7 +68,7 @@ public class TestGradleReplacement {
          LOG.debug("Creation success: " + alternativeGradle.exists() + " parent: " + module.exists());
       }
       try {
-         Thread.sleep(1000);
+         Thread.sleep(5000);
       } catch (InterruptedException e) {
          e.printStackTrace();
       }
@@ -76,6 +76,13 @@ public class TestGradleReplacement {
 
    @Test
    public void testReplacement() throws IOException, XmlPullParserException, InterruptedException {
+      System.out.println("Real test start");
+      try {
+         Thread.sleep(5000);
+      } catch (InterruptedException e) {
+         e.printStackTrace();
+      }
+      
       prepareBuildfiles(true);
 
       List<File> modules = SettingsFileParser.getModules(projectDir).getModules();
