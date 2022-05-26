@@ -81,17 +81,17 @@ public class TestGradleReplacement {
       }
    }
 
-   @Test
-   public void testNoReplacement() throws IOException, XmlPullParserException, InterruptedException {
-      prepareBuildfiles(false);
-
-      List<File> modules = SettingsFileParser.getModules(projectDir).getModules();
-      for (File module : modules) {
-         final File gradleFile = GradleParseHelper.findGradleFile(module);
-         String fileContent = FileUtils.readFileToString(gradleFile, StandardCharsets.UTF_8);
-         MatcherAssert.assertThat(fileContent, Matchers.not(Matchers.containsString(ALTERNATIVE_FILE_CONTENT)));
-      }
-   }
+//   @Test
+//   public void testNoReplacement() throws IOException, XmlPullParserException, InterruptedException {
+//      prepareBuildfiles(false);
+//
+//      List<File> modules = SettingsFileParser.getModules(projectDir).getModules();
+//      for (File module : modules) {
+//         final File gradleFile = GradleParseHelper.findGradleFile(module);
+//         String fileContent = FileUtils.readFileToString(gradleFile, StandardCharsets.UTF_8);
+//         MatcherAssert.assertThat(fileContent, Matchers.not(Matchers.containsString(ALTERNATIVE_FILE_CONTENT)));
+//      }
+//   }
 
    private void prepareBuildfiles(final boolean replace) throws IOException, XmlPullParserException, InterruptedException {
       JUnitTestTransformer mockedTransformer = Mockito.mock(JUnitTestTransformer.class);
